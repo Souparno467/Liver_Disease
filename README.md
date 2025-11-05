@@ -1,4 +1,9 @@
 #Liver_Disease prediction app
+
+
+
+
+
 DATASET USED--->https://www.kaggle.com/datasets/uciml/indian-liver-patient-records
 <img width="1915" height="1019" alt="Screenshot 2025-11-05 152914" src="https://github.com/user-attachments/assets/24fda7c8-b4a7-490a-9cd9-633187f135de" />
 <img width="1386" height="682" alt="Screenshot 2025-11-05 152604" src="https://github.com/user-attachments/assets/bb9c3039-4794-460a-b608-53a5cee9d33d" />
