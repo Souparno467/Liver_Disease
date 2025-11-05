@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Disease Predictor </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="container">
+        <div class="glow-effect"></div>
+        
+        <div class="header-section">
+            <div class="pulse-ring"></div>
+            <h1 class="main-title">
+                <span class="icon">🩺</span>
+                <span class="text-glow">LIVER DISEASE</span>
+                <span class="text-glow-alt">PREDICTION SYSTEM</span>
+            </h1>
+            <div class="scan-line"></div>
+            <p class="subtitle">Advanced Clinical Analytics &Diagnosis</p>
+        </div>
+
+        <form action="/predict" method="POST" class="prediction-form">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="age">Age</label>
+                    <input type="number" step="any" id="age" name="Age" placeholder="Enter age in years" required>
+                    <span class="input-border"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="Gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                    <span class="input-border"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="total_bili">Total Bilirubin</label>
+                    <input type="number" step="any" id="total_bili" name="Total_Bilirubin" placeholder="mg/dL" required>
+                    <span class="input-border"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="direct_bili">Direct Bilirubin</label>
+                    <input type="number" step="any" id="direct_bili" name="Direct_Bilirubin" placeholder="mg/dL" required>
+                    <span class="input-border"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="alk_phos">Alkaline Phosphotase</label>
+                    <input type="number" step="any" id="alk_phos" name="Alkaline_Phosphotase" placeholder="IU/L" required>
+                    <span class="input-border"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="alt">Alamine Aminotransferase (ALT)</label>
+                    <input type="number" step="any" id="alt" name="Alamine_Aminotransferase" placeholder="IU/L" required>
+                    <span class="input-border"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="ast">Aspartate Aminotransferase (AST)</label>
+                    <input type="number" step="any" id="ast" name="Aspartate_Aminotransferase" placeholder="IU/L" required>
+                    <span class="input-border"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="proteins">Total Proteins</label>
+                    <input type="number" step="any" id="proteins" name="Total_Protiens" placeholder="g/dL" required>
+                    <span class="input-border"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="albumin">Albumin</label>
+                    <input type="number" step="any" id="albumin" name="Albumin" placeholder="g/dL" required>
+                    <span class="input-border"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="ag_ratio">Albumin/Globulin Ratio</label>
+                    <input type="number" step="any" id="ag_ratio" name="Albumin_and_Globulin_Ratio" placeholder="Ratio" required>
+                    <span class="input-border"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="predict-btn">
+                <span class="btn-glow"></span>
+                <span class="btn-text">ANALYZE & PREDICT</span>
+                <span class="btn-icon">🧬</span>
+            </button>
+        </form>
+
+        <div class="disclaimer">
+            <div class="warning-icon">⚠️</div>
+            <p><strong>Medical Disclaimer:</strong> This system provides preliminary screening results for educational purposes only. Always consult qualified healthcare professionals for accurate diagnosis and treatment.</p>
+        </div>
+
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+</body>
+</html>

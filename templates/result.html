@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results - Liver Disease Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="result-container">
+        <div class="glow-effect"></div>
+        
+        <div class="header-section">
+            <div class="pulse-ring"></div>
+            <h1 class="main-title">
+                <span class="icon">🧬</span>
+                <span class="text-glow">ANALYSIS</span>
+                <span class="text-glow-alt">COMPLETE</span>
+            </h1>
+            <div class="scan-line"></div>
+        </div>
+
+        <div class="result-card">
+            <div class="status-indicator">
+                <div class="status-ring"></div>
+                <div class="status-pulse"></div>
+            </div>
+
+            <div class="result-content">
+                <div class="result-status">
+                    <h2>DIAGNOSTIC STATUS</h2>
+                    <p class="status-text">{{ result }}</p>
+                </div>
+
+                <div class="result-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Disease Classification:</span>
+                        <span class="detail-value disease-type">{{ disease }}</span>
+                    </div>
+
+                    <div class="detail-item explanation">
+                        <span class="detail-label">Clinical Explanation:</span>
+                        <p class="detail-value">{{ reason }}</p>
+                    </div>
+                </div>
+
+                <div class="recommendations">
+                    <h3>
+                        <span class="rec-icon">💡</span> 
+                        MEDICAL RECOMMENDATIONS
+                    </h3>
+                    <div class="rec-content">
+                        {% if 'Hepatitis' in disease %}
+                            <p>🔹 <strong>Immediate Actions:</strong> Avoid alcohol consumption completely. Schedule comprehensive Hepatitis B & C screening.</p>
+                            <p>🔹 <strong>Prevention:</strong> Maintain strict hygiene protocols. Consider vaccination if not immunized.</p>
+                            <p>🔹 <strong>Monitoring:</strong> Regular liver function tests every 3-6 months.</p>
+                        {% elif 'Cirrhosis' in disease or 'Alcoholic' in disease %}
+                            <p>🔹 <strong>Critical:</strong> Immediate medical supervision required. Lifestyle modification is essential.</p>
+                            <p>🔹 <strong>Treatment:</strong> Consult hepatologist for specialized care plan.</p>
+                            <p>🔹 <strong>Lifestyle:</strong> Complete abstinence from alcohol. Low-sodium diet recommended.</p>
+                        {% elif 'Fatty' in disease %}
+                            <p>🔹 <strong>Exercise:</strong> 150 minutes of moderate activity weekly. Include strength training.</p>
+                            <p>🔹 <strong>Nutrition:</strong> Reduce sugar, saturated fats, and refined carbohydrates.</p>
+                            <p>🔹 <strong>Monitoring:</strong> Track liver enzymes and body weight regularly.</p>
+                        {% elif 'Jaundice' in disease %}
+                            <p>🔹 <strong>Care:</strong> Adequate rest and hydration are essential. Monitor bilirubin levels.</p>
+                            <p>🔹 <strong>Symptoms:</strong> Seek immediate care if yellowing intensifies or dark urine persists.</p>
+                            <p>🔹 <strong>Diet:</strong> Light, easily digestible foods. Avoid heavy meals.</p>
+                        {% else %}
+                            <p>🔹 <strong>Prevention:</strong> Maintain balanced diet rich in antioxidants and fiber.</p>
+                            <p>🔹 <strong>Screening:</strong> Annual liver function tests for early detection.</p>
+                            <p>🔹 <strong>Lifestyle:</strong> Regular exercise, adequate hydration, limit alcohol.</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="/" class="back-btn">
+                        <span class="btn-glow"></span>
+                        <span class="btn-icon">🔙</span>
+                        <span class="btn-text">NEW ANALYSIS</span>
+                    </a>
+                    <button onclick="window.print()" class="print-btn">
+                        <span class="btn-glow"></span>
+                        <span class="btn-icon">🖨️</span>
+                        <span class="btn-text">PRINT REPORT</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+</body>
+</html>
